@@ -1,0 +1,162 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+    color: #334155;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    width: 100%;
+}
+.card {
+    background-color: #ffffff;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0; /* border-gray-200 */
+}
+.progress-bar-container {
+    width: 100%;
+    background-color: #e2e8f0; /* bg-gray-200 */
+    border-radius: 9999px; /* rounded-full */
+    height: 0.75rem; /* h-3 */
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    border-radius: 9999px; /* rounded-full */
+    transition: width 0.5s ease-in-out;
+}
+/* Status dot styles */
+.status-dot {
+    display: inline-block;
+    width: 0.75rem; /* Equivalent to w-3 */
+    height: 0.75rem; /* Equivalent to h-3 */
+    border-radius: 50%; /* Equivalent to rounded-full */
+    margin-right: 0.5rem; /* Equivalent to mr-2 */
+}
+
+/* Custom Modal Styles */
+.modal {
+    position: fixed;
+    z-index: 1000; /* High z-index to appear on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    width: 90%;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+/* Specific styles for the map */
+#map {
+    height: 400px; /* Adjust height for the map */
+    width: 100%;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background-color: #e2e8f0; /* Light gray background */
+    display: block; /* Important for Leaflet to render correctly */
+}
+
+/* Teachable Machine specific styles */
+#webcam-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* INCREASED: Adjust as needed, e.g., to 600px */
+    margin: 0 auto;
+    border: 2px solid #cbd5e0; /* border-gray-300 */
+    border-radius: 0.5rem; /* rounded-lg */
+    overflow: hidden;
+    position: relative; /* For absolute positioning of loading message */
+}
+
+#canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures video fills container while maintaining aspect ratio */
+}
+
+#loading-camera-message {
+    position: absolute;
+    inset: 0; /* Equivalent to top:0; right:0; bottom:0; left:0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(17, 24, 39, 0.75); /* bg-gray-900 with opacity */
+    color: #ffffff;
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    z-index: 10;
+}
+
+/* Waste Disposal Section Specific Styles */
+#waste-disposal-section {
+    max-width: 800px; /* Make it wider */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1.5rem; /* Adjust padding to make it shorter vertically */
+    display: flex; /* Use flexbox for internal layout control */
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the section */
+}
+
+#waste-disposal-section h2 {
+    width: 100%; /* Ensure heading takes full width for centering */
+}
+
+#waste-disposal-section p.mb-4 {
+    margin-bottom: 1rem; /* Reduce margin below the descriptive text */
+}
+
+#webcam-container {
+    margin-bottom: 0.5rem; /* Reduce margin below webcam */
+}
+
+#label-container {
+    margin-top: 0.5rem; /* Adjust margin-top to reduce space above label */
+    margin-bottom: 1rem; /* Add some space below the label */
+}
+
+#throw-waste-btn {
+    width: 80%; /* Make the button wider but not full width */
+    max-width: 300px; /* Limit max width for desktop */
+    margin-top: 0; /* Remove top margin, handled by parent flex container */
+    padding-top: 1rem; /* Make button taller */
+    padding-bottom: 1rem; /* Make button taller */
+    font-size: 1.125rem; /* Increase font size for button */
+}
